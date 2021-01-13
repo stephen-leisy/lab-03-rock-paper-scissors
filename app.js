@@ -1,11 +1,13 @@
+
+import { getRandomThrow, didUserWin } from "./get-random-throw.js";
+
 // import functions and grab DOM elements
 const playButton = document.getElementById('throw-button');
-// const winCount = document.getElementById('win-count');
-// const loseCount = document.getElementById('loss-count');
-// const drawCount = document.getElementById('draw-count');
-const youWinSpan = document.getElementById('you-won');
-const youLoseSpan = document.getElementById('you-lost');
-const youDrawSpan = document.getElementById('you-tied');
+const winSpan = document.getElementById('win-count');
+const loseSpan = document.getElementById('loss-count');
+const drawSpan = document.getElementById('draw-count');
+const resultsSpan = document.getElementById('you-won-lost-span');
+
 
 // initialize state
 let winCount = 0;
@@ -14,17 +16,32 @@ let drawCount = 0;
 
 // set event listeners to update state and DOM
 playButton.addEventListener('click', () => {
-    const userPlayChoice = document.querySelector('input:checked');
-    console.log(userPlayChoice.value);
-
+    const userClickChoice = document.querySelector('input:checked');
+    const userPlayChoice = userClickChoice.value;
+    console.log(userPlayChoice);
     let computerNumber = Math.ceil(Math.random() * 3);
-    function getRandomThrow(computerNumber) {
-        if (computerNumber === 1) {
-            return 'rock'
-        } else if (computerNumber === 2) {
-            return 'paper'
-        } else
-            return 'scissors'
+    const computerPlayChoice = getRandomThrow(computerNumber);
+    console.log(computerPlayChoice);
+
+    const theOutcome = didUserWin(userPlayChoice, computerPlayChoice);
+
+    if (theOutcome === 'You Won!') {
+        winCount++;
+        winSpan.textContent = winCount;
+        resultsSpan.textContent = "You Did It!";
     }
-    console.log(getRandomThrow(3));
+    if (theOutcome === 'You Lose!') {
+        loseCount++;
+        loseSpan.textContent = loseCount;
+        resultsSpan.textContent = "You Lost :("
+
+
+    }
+    if (theOutcome === 'We Have A Draw') {
+        drawCount++;
+        drawSpan.textContent = drawCount;
+        resultsSpan.textContent = 'Its a draw.';
+    }
+
+
 })
