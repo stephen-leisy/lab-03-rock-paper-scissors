@@ -16,4 +16,15 @@ let drawCount = 0;
 playButton.addEventListener('click', () => {
     const userPlayChoice = document.querySelector('input:checked');
     console.log(userPlayChoice.value);
+
+    let computerNumber = Math.ceil(Math.random() * 3);
+    function getRandomThrow(computerNumber) {
+        if (computerNumber === 1) {
+            return 'rock'
+        } else if (computerNumber === 2) {
+            return 'paper'
+        } else
+            return 'scissors'
+    }
+    console.log(getRandomThrow(3));
 })
