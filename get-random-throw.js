@@ -1,12 +1,10 @@
-
-
 export function getRandomThrow(booger) {
     if (booger === 1) {
-        return 'rock'
+        return 'rock';
     } else if (booger === 2) {
-        return 'paper'
+        return 'paper';
     } else
-        return 'scissors'
+        return 'scissors';
 
 }
 
@@ -14,17 +12,16 @@ export function didUserWin(player, computer) {
     if ((player === 'rock' && computer === 'paper') ||
         (player === 'paper' && computer === 'scissors') ||
         (player === 'scissors' && computer === 'rock')) {
-        return 'You Lose!'
+        return 'You Lose!';
     }
-    if ((player === 'rock' && computer === 'rock') ||
-        (player === 'paper' && computer === 'paper') ||
-        (player === 'scissors' && computer === 'scissors')) {
-        return 'We Have A Draw'
+    if (player === computer) {
+        return 'We Have A Draw';
     }
     if ((player === 'paper' && computer === 'rock') ||
         (player === 'scissors' && computer === 'paper') ||
         (player === 'rock' && computer === 'scissors')) {
-        return 'You Won!'
+        return 'You Won!';
     }
 
 }
+
