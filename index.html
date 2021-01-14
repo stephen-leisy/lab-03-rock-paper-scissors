@@ -10,10 +10,14 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
+
+
 
     </header>
     <main>
@@ -24,27 +28,39 @@
         <li>scissor beats paper</li>
         <li>paper beats rock</li>
         <li>rock beats scissors</li>
-        <label>
-            <input type='radio' name='player-throw' value='rock' checked />ROCK
-        </label>
-        <label>
-            <input type='radio' name='player-throw' value='paper' />PAPER
-        </label>
-        <label>
-            <input type='radio' name='player-throw' value='scissors' />SCISSORS
-        </label>
+        <div class='picture-box'>
+            <label>
+                <input type='radio' name='player-throw' value='rock' checked />
+                <img src='assets/rock.png'>
+            </label>
+            <label>
+                <input type='radio' name='player-throw' value='paper' />
+                <img src='assets/paper.png'>
+            </label>
+            <label>
+                <input type='radio' name='player-throw' value='scissors' />
+                <img src='assets/scissors.png'>
+            </label>
+        </div>
         <button id='throw-button'>THROW!</button>
-        <div>You've won <span id='win-count'></span> &nbsp; times</div>
-        <div>You've lost <span id='loss-count'></span>&nbsp;times</div>
-        <div>You've had a draw <span id='draw-count'></span>&nbsp;times</div>
-        <div><span id='you-won-lost-span'></span></div>
+        <div class='results-text'><span id='you-won-lost-span'></span></div>
+        <h3>PLAY COUNT</h3>
+
+        <body class='counter-stuff'>
+            <div>You've won <span id='win-count'></span> &nbsp; times</div>
+            <div>You've lost <span id='loss-count'></span>&nbsp;times</div>
+            <div>You've had a draw <span id='draw-count'></span>&nbsp;times</div>
+            <button id='reset-button'>Start Over?</button>
+
+        </body>
+
 
     </main>
 
 
 
     <footer>
-        <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
+
     </footer>
 
     <script type="module" src="app.js"></script>
