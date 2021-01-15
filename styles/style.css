@@ -45,7 +45,9 @@ img {
 input:checked + img {
     border: solid 10px purple;
 }
-
+button {
+    border: solid 10px purple;
+}
 input {
     display: none;
 }
@@ -65,7 +67,7 @@ section {
     border: solid 2px var(--color1);
 }
 
-header {
+/* header {
     display: flex;
     justify-content: flex-end;
     align-items:flex-end;
@@ -74,6 +76,7 @@ header {
     height: var(--header-height);
     box-shadow: var(--shadow);
 }
+*/
 
 footer {
     display: flex;
