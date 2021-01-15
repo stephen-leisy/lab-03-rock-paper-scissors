@@ -28,6 +28,28 @@ main {
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
+    font-family: 'bangers', sans-serif;
+    font-size: larger;
+}
+
+.results-text {
+    color: purple;
+    font-size: 40px;
+}
+
+img {
+    height: 200px;
+    width: 250px;
+}
+
+input:checked + img {
+    border: solid 10px purple;
+}
+button {
+    border: solid 10px purple;
+}
+input {
+    display: none;
 }
 
 section {
@@ -45,13 +67,16 @@ section {
     border: solid 2px var(--color1);
 }
 
-header {
+/* header {
     display: flex;
     justify-content: flex-end;
+    align-items:flex-end;
+    flex-direction: column;
     background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);
 }
+*/
 
 footer {
     display: flex;
@@ -93,10 +118,16 @@ footer {
     width: 100%;
     bottom: 0;
     height: var(--footer-height);
-    display: flex;
+    /* display: flex;
     justify-content: flex-end;
     background-color: var(--color3);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow); */
+}
+
+.counter-stuff {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-evenly;
 }
   
   @keyframes pulse {
